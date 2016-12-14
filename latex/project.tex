@@ -130,7 +130,7 @@ The main issue that arises when attempting to use principal componenet analysis 
 and as such it will have difficulties differentiating between the correct object and others. PCA works by
 creation of a basis using k eigen vectors. \\
 Consider a set of n fish images $X=\{x_1,x_2,...,x_n\}$, where each $x_i$ represents a vector of the fish image.\\
-Let $\bar{\vec{x}}$ by the average fish among $X$ then normalize the fish such that $\tilde{X} = X- \bar{\vec{x}}$ \\
+Let $\bar{\vec{x}}$ be the average fish among $X$ then normalize the fish such that $\tilde{X} = X- \bar{\vec{x}}$ \\
 Then project the faces. Because $X$ is such a large matrix in order to create the eigenvectors singular value decomposition will be used.\\
 \[\tilde{X}^{T}\tilde{X} = V \Sigma ^2 V^{T} \]
 Let $V_k$ be the fist $k$ vectors in $V$. \\
@@ -353,14 +353,17 @@ has also been outlined which is much improved from PCA. A close up is shown belo
 \caption{Larger version of sparse output}
 \end{figure}
 The features of the fish are fully present in this image, and it was able to reduce the clutter of the image much
-more than PCA.
+more than PCA. The advantage of this system is that it does not require the time consuming process of pre-processing
+that PCA required to create the eigenvectors. The process is able to more accurately include defining features
+of a fish which can later be used to identify the species.
 
 \section{Conclusions}
 A comparison on the effectiveness of PCA using sliding window technique, versus Sparse Matrix representation was used.
 This was done in order to find objects within a cluttered image. What was found was the PCA performed poorly in its ability to find
 the object that was given to it relative to the Sparse Matrix. However, PCA was much quicker, but being able to quickly get to the
 incorrect answer does not make up for the limitations it comes to. In general, PCA requires much more time spent before the analysis to
-clean up the image, while a sparse matrix can be formed without any priot knowledge of the structure.
+clean up the image, while a sparse matrix can be formed without any prior knowledge of the structure. The sparse matrix extraction
+lends itself to being automated for pre-processing, such that further analaysis on the species of fish can be done.
 
 
 \end{document}
